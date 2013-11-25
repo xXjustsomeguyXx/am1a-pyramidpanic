@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PyramidPanic", "PyramidPanic\PyramidPanic\PyramidPanic.csproj", "{56F487A8-CAD4-49C6-B2F2-EF84D9F9A840}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "PyramidPanicContent", "PyramidPanic\PyramidPanicContent\PyramidPanicContent.contentproj", "{5AA0F7AF-EE33-437A-A7F5-97132DD1C0EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56F487A8-CAD4-49C6-B2F2-EF84D9F9A840}.Debug|x86.ActiveCfg = Debug|x86
+		{56F487A8-CAD4-49C6-B2F2-EF84D9F9A840}.Debug|x86.Build.0 = Debug|x86
+		{56F487A8-CAD4-49C6-B2F2-EF84D9F9A840}.Release|x86.ActiveCfg = Release|x86
+		{56F487A8-CAD4-49C6-B2F2-EF84D9F9A840}.Release|x86.Build.0 = Release|x86
+		{5AA0F7AF-EE33-437A-A7F5-97132DD1C0EB}.Debug|x86.ActiveCfg = Debug|x86
+		{5AA0F7AF-EE33-437A-A7F5-97132DD1C0EB}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
