@@ -17,7 +17,8 @@
     <XnaCrossPlatformGroupID>d55c051e-3f9d-429c-a8c1-0a219957414e</XnaCrossPlatformGroupID>
     <XnaOutputType>Game</XnaOutputType>
     <ApplicationIcon>pyramid.ico</ApplicationIcon>
-    <Thumbnail>GameThumbnail.png</Thumbnail>
+    <Thumbnail>
+    </Thumbnail>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -107,12 +108,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameScenes\GameOverScene\GameOverScene.cs" />
+    <Compile Include="GameScenes\HelpScene\HelpScene.cs" />
+    <Compile Include="GameScenes\PlayScene\PlayScene.cs" />
+    <Compile Include="Input\Input.cs" />
+    <Compile Include="Game\IState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="PyramidPanic.cs" />
+    <Compile Include="Game\Program.cs" />
+    <Compile Include="Game\PyramidPanic.cs" />
+    <Compile Include="GameScenes\StartScene\StartScene.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GameThumbnail.png" />
     <Content Include="pyramid.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +154,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--

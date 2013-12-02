@@ -18,6 +18,53 @@ namespace PyramidPanic
        private GraphicsDeviceManager graphics;
        private SpriteBatch spriteBatch;
 
+       //Maak een variabele aan van het type StartScene, PlayScene, HelpScene, GameOverScene
+       private StartScene startScene;
+       private PlayScene playScene;
+       private HelpScene helpScene;
+       private GameOverScene gameOverScene;
+
+       //maak een variabele iState aan van het type interface IState
+       private IState iState;
+
+       #region Yolo
+       //properties
+       //maak de interface variabele iState beschikbaar buiten de class D.M.V
+       //een property IState
+       public IState IState
+       {
+           get { return this.iState; }
+           set { this.iState = value; }
+       }
+
+       //maak het field this.startScene beschikbaar buiten de class d.m.v een
+       //Property StartScene
+
+       public StartScene StartScene
+       {
+           get { return this.startScene; }
+       }
+       //maak het field this.startScene beschikbaar buiten de class d.m.v een
+       //Property StartScene
+       public PlayScene PlayScene
+       {
+           get { return this.playScene; }
+       }
+       //maak het field this.startScene beschikbaar buiten de class d.m.v een
+       //Property StartScene
+       public HelpScene HelpScene
+       {
+           get { return this.helpScene; }
+       }
+       //maak het field this.startScene beschikbaar buiten de class d.m.v een
+       //Property StartScene
+       public GameOverScene GameOverScene
+       {
+           get { return this.gameOverScene; }
+       } 
+       #endregion
+
+
         //Dit is de constructor. heeft altijd dezelfde naam als class
         public PyramidPanic()
         {
@@ -53,25 +100,57 @@ namespace PyramidPanic
         {
             // Een spritebatch is nodig voor het tekenen van textures op het canvas
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            //We maken nu het object/instantie aan van het type startScene. Dit doe je door
+            //De constructor aan te roepen van de StartScene 
+            this.startScene = new StartScene(this);
+            this.playScene = new PlayScene(this);
+            this.helpScene = new HelpScene(this);
+            this.gameOverScene = new GameOverScene(this);
+
+            this.iState = this.startScene;
         }
+
         protected override void UnloadContent()
         {
 
         }
+
         protected override void Update(GameTime gameTime)
         {
             // Zorgt dat het spel stopt wanneer je op de gamepad button back indrukt.
             if ((GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed) ||
                 (Keyboard.GetState().IsKeyDown(Keys.Escape)))
                 this.Exit();
-
+            //De update method van de static Input class wordt aangeroepen
+            Input.Update();
+            // De update methode van het object dat toegewezen is aan het interface object
+            // this.iState wordt aangeroepen.
+            this.iState.Update(gameTime);
+            
             base.Update(gameTime);
         }
         protected override void Draw(GameTime gameTime)
         {
+           
             //geef de achtergrond en kleur
-            GraphicsDevice.Clear(Color.OrangeRed);
+            GraphicsDevice.Clear(Color.Aqua);
+            
+            //Voor een spritebatch instantie iets kan tekenen moet de begin() methode
+            //aangeroepen worden
+            this.spriteBatch.Begin();
+
+            //De Draw methode van het object dat toegewezen is aan het interface-object 
+            //this.iState wordt aangeroepen.
+            this.iState.Draw(gameTime);
+
+            //Nadat de spritebatch.draw() is aangeroepen moet de end() methode van de
+            //Sprite class worden aangeroepen
+            this.spriteBatch.End();
+            
             base.Draw(gameTime);
+
+
         }
     }
 }
