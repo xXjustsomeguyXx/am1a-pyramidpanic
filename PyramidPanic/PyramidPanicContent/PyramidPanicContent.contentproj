@@ -56,13 +56,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StartScene\Button_leveleditor.png">
-      <Name>Button_leveleditor</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="StartScene\Button_load.png">
       <Name>Button_load</Name>
       <Importer>TextureImporter</Importer>
