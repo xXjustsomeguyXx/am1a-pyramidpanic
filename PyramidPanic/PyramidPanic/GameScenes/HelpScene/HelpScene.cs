@@ -16,8 +16,7 @@ namespace PyramidPanic
     {
          //FieldAccessException van decimal class PlayScene
         private PyramidPanic game;
-
-        // Constructor van PlayScene-class krijgt een object game mee van het type PyramidPanic
+   
         public HelpScene(PyramidPanic game)
         {
             this.game = game;

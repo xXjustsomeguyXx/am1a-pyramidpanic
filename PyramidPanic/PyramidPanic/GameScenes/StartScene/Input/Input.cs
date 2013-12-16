@@ -44,7 +44,7 @@ namespace PyramidPanic
 
        }
 
-       //Dit is een edgedertector voor het indrukken van een knop nu ingedrukt is en
+       //Dit is een edgedetector voor het indrukken van een knop nu ingedrukt is en
        //de vorige update niet ingedrukt was
        public static bool EdgeDetectKeyDown(Keys key)
        {
