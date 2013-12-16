@@ -41,7 +41,7 @@ namespace PyramidPanic
            oms = ms;
            oks = ks;
            ks = Keyboard.GetState();
-
+           ms = Mouse.GetState();
        }
 
        //Dit is een edgedetector voor het indrukken van een knop nu ingedrukt is en

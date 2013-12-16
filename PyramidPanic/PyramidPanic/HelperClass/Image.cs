@@ -34,6 +34,11 @@ namespace PyramidPanic
            get { return this.color; }
            set { this.color = value; }
        }
+       public Rectangle Rectangle
+       //maak een property voor het rectangle field
+       {
+           get { return this.rectangle; }
+       }
 #endregion
 
        //constructor
