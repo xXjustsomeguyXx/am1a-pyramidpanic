@@ -18,13 +18,14 @@ namespace PyramidPanic
        private GraphicsDeviceManager graphics;
        private SpriteBatch spriteBatch;
 
-       //Maak een variabele aan van het type StartScene, PlayScene, HelpScene, GameOverScene, LoadScene
+       //Maak een variabele aan van het type StartScene, PlayScene, HelpScene, GameOverScene, LoadScene, QuitScene
        private StartScene startScene;
        private PlayScene playScene;
        private HelpScene helpScene;
        private GameOverScene gameOverScene;
-       private LoadScene loadscene;
-       private ScoreScene scorescene;
+       private LoadScene loadScene;
+       private ScoreScene scoreScene;
+       private QuitScene quitScene;
        
        //maak een variabele iState aan van het type interface IState
        private IState iState;
@@ -75,12 +76,17 @@ namespace PyramidPanic
        //Property LoadScene
        public LoadScene LoadScene
        {
-           get { return this.loadscene; }
+           get { return this.loadScene; }
        }
 
        public ScoreScene ScoreScene
        {
-           get { return this.scorescene; }
+           get { return this.scoreScene; }
+       }
+
+       public QuitScene QuitScene
+       {
+           get { return this.quitScene; }
        }
        #endregion
 
@@ -122,13 +128,14 @@ namespace PyramidPanic
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             //We maken nu het object/instantie aan van het type startScene. Dit doe je door
-            //De constructor aan te roepen van de StartScene, PlayScene, HelpScene, GameOverScene, LoadScene, ScoreScene
+            //De constructor aan te roepen van de StartScene, PlayScene, HelpScene, GameOverScene, LoadScene, ScoreScene, QuitScene
             this.startScene = new StartScene(this);
             this.playScene = new PlayScene(this);
             this.helpScene = new HelpScene(this);
             this.gameOverScene = new GameOverScene(this);
-            this.loadscene = new LoadScene(this);
-            this.scorescene = new ScoreScene(this);
+            this.loadScene = new LoadScene(this);
+            this.scoreScene = new ScoreScene(this);
+            this.quitScene = new QuitScene(this);
 
             this.iState = this.startScene;
         }

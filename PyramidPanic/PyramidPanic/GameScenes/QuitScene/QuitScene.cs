@@ -11,23 +11,23 @@ using Microsoft.Xna.Framework.Media;
 
 namespace PyramidPanic
 {
-   public class LoadScene : IState
+    public class QuitScene : IState
     {
-        //FieldAccessException van decimal class StartScene
+        //FieldAccessException van decimal class QuitScene
         private PyramidPanic game;
 
         //Maak een variabele (reference) aan van de Menu class genaamd menu
         private Menu menu;
 
-        // Constructor van StartScene-class krijgt een object game mee van het type PyramidPanic
-        public LoadScene(PyramidPanic game)
+        // Constructor van QuitScene-class krijgt een object game mee van het type PyramidPanic
+        public QuitScene(PyramidPanic game)
         {
             this.game = game;
 
             //roep de initialize method aan
             this.initialize();
         }
-        
+
         //initialize methode. Deze methode initialiseert (geeft startwaarden aan variabelen)
         //void wil zeggen dat er niets teruggegeven wordt.
         public void initialize()
@@ -40,7 +40,7 @@ namespace PyramidPanic
         //classes.
         public void LoadContent()
         {
-          
+
         }
 
         //update methode. Deze methode wordt normaal 60 maal per seconde aangeroepen.
@@ -57,9 +57,9 @@ namespace PyramidPanic
         // tekent de textures op het canvas
         public void Draw(GameTime gameTime)
         {
-  
-          this.game.GraphicsDevice.Clear(Color.DarkOrange);
-    
-    }
+
+            this.game.GraphicsDevice.Clear(Color.WhiteSmoke);
+
+        }
     }
 }
